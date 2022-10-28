@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        h1 {
+            font-family: 'font', sans-serif;
+            font-size: 25px;
+        }
+        html {
+            text-align: center;
+        }
+        input {
+            width: 30%;
+            height: 40px;
+            border: 2px solid black;
+            padding-left: 10px;
+        }
+        #id_ {
+            font-size: 20px;
+        }
+        #pass_ {
+            font-size: 20px;
+        }
+        #submit {
+            width: 150px;
+            height: 30px;
+            background-color: rgb(226, 135, 17);
+            color: white;
+            font-size: 15px;
+            font-family: 'font', sans-serif;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+        #submit:hover {
+            background-color:lightgreen;
+        }
+    </style>
+
+</head>
+<body style = "background-color: rgb(255, 250, 234);">
+    
+    <script>
+        function fn_login(){
+            //  user-id 의 value를 가져와 로컬스토리지에서 해당 key를 가진 값이 있는지 체크
+            let id = document.getElementById('id_');
+            let pw = document.getElementById('pw_');
+            let local_pw = localStorage.getItem(id.value);
+            //없다면 입력아이디 지우고 다시 입력하도록 
+            if(local_pw == null){
+               alert(id.value + '아이디는 회원 내역에 없습니다.')
+               id.value='';
+               id.focus();
+            }else{
+                // user-id 의 value와 user-pw의 값이 같으면 
+                if(pw.value == local_pw){
+                    // 로그인 성공으로 -> 점심메뉴.html로 이동 (location.href=이동경로)
+                    location.href = 'project.html';
+                    //pw가 틀렸다면 지우고 다시 입력하도록
+                }else{
+                    alert("비번이 틀렸습니다.");
+                    pw.value = '';
+                    pw.focus();
+                    
+                }
+            }
+            
+        }
+        </script>
+        <h1 style="font-size: 2em;">My foodie 로그인</h1>
+    
+        <h1>아이디</h1>
+    
+        <form id="idform">
+            <input type="id" name="id" id="id_" placeholder="아이디를 입력해주세요.">
+        </form>
+    
+        <h1>패스워드</h1>
+    
+        <form id="passform">
+            <input type="password" name="pass" id="pass_" placeholder="비밀번호를 입력해주세요.">
+        </form>
+        <br>
+        <br>
+    
+        <button id="submit" onclick="fn_login()">로그인</button>
+        <button id="submit"onclick="window.open('ex_register.html','_blank', 'width=500', 'height=500')">회원가입</button>
+    
+</body>
+</html>

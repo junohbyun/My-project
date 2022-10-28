@@ -1,0 +1,37 @@
+
+h1{
+    text-align: center;
+}
+#container{
+    width: 600px;
+    margin: 50 ;
+}
+ul{
+    list-style: none;
+    float: center;
+
+}
+ul li{
+    clear: both;
+    float: center;
+
+}
+input{
+    float: center;
+    width: 350px; height: 35px; border: 1px solid#aaa;
+    border-radius: 5px; padding: 5px; margin: 10px 0;
+}
+#button > li{
+    display: inline-block;
+}
+button{
+    width: 250px; height: 50px; margin-right: 10px; border: 1px solid#ccc;
+    background: #eee; font-size: 0.9em;
+}
+.field{
+    float: right; width: 100px; font-weight: bold; font-size: 0.9em; line-height: 55px;
+    text-align: right; margin-right: 15px;
+}
+form{
+   margin-left: 700px;
+}
